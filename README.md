@@ -6,9 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting Started
 
-In the project directory, you can run:
+First you will need to clone the API from [animeAPI](https://github.com/swipertin/animeAPI). Once cloned cd into API run command `npm install` then `npm start`
 
-### `npm start`
+Once API is started cd in the Anime List project and run commands `npm install` then `npm start`  
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
