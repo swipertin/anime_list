@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Header from "./Header";
+import Main from "./Main";
+import Item from "./Item";
+import ItemList from "./ItemList";
+import NavBar from "./Nav";
+import Pagination from "./Pagination";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import ItemInfo from "./ItemInfo";
 
-function App() {
+const App = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/getanime")
+      .then(function (response) {
+        console.log(response);
+        console.log(response.data.data);
+        setItems(response.data.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <NavBar setItems={setItems} />
+        <Route exact path="/home">
+          <Main setItems={setItems} />
+          <ItemList items={items} ItemInfo={ItemInfo} Item={Item} />
+          <Pagination setItems={setItems} />
+        </Route>
+        <Route exact path="/iteminfo">
+          <ItemInfo />
+        </Route>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

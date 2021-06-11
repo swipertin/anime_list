@@ -1,13 +1,118 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  background-image: url(ocean.jpg);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+header {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(
+      148deg,
+      rgba(0, 0, 0, 0.9290091036414566) 39%,
+      rgba(128, 125, 125, 0.9066001400560224) 57%,
+      rgba(253, 29, 29, 0.8365721288515406) 78%
+    )
+    5;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    148deg,
+    rgba(0, 0, 0, 0.9290091036414566) 39%,
+    rgba(128, 125, 125, 0.9066001400560224) 57%,
+    rgba(253, 29, 29, 0.8365721288515406) 78%
+  );
+  color: whitesmoke;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.navbar {
+  padding-left: 18px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgb(175, 231, 85);
+}
+
+.nav-link:visited {
+  text-decoration: none;
+}
+
+.main {
+  display: inline;
+  text-align: center;
+  color: whitesmoke;
+  padding-bottom: 10px;
+}
+
+.card {
+  display: inline-grid;
+  padding-bottom: 25px;
+  padding-right: 15px;
+}
+
+.cardContent {
+  background-image: url(ocean.jpg);
+  color: whitesmoke;
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+.itemListDiv {
+  text-align: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+form {
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+input {
+  width: 20%;
+}
+
+.info2 {
+  display: inline-flex;
+  justify-content: center;
+  color: whitesmoke;
+  padding: 140px;
+}
+
+.info2 img {
+  height: 550px;
+  width: 550px;
+}
+
+.details {
+  display: block;
+  padding: 20px;
+}
+
+.detail {
+  display: inline-block;
+  margin: 2px;
 }
